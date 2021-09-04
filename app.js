@@ -24,7 +24,7 @@ app.use(
     secret: 'doesnt matter',
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 600000 }, // 10 minutes
+    cookie: { maxAge: 600000000 }, // 10 minutes
     store: MongoStore.create({
       // <== ADDED !!!
       mongoUrl: "mongodb://localhost/MapUrVacation_app",
@@ -81,8 +81,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
-const celebrities = require('./routes/locations');
-app.use('/', celebrities);
+const locations = require('./routes/locations');
+app.use('/', locations);
 const movies = require('./routes/movies');
 app.use('/', movies);
 const user = require('./routes/userRoutes');

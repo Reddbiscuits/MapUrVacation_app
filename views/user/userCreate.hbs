@@ -1,13 +1,26 @@
 <h1>Create a new account</h1>
 <div class="loginFields">
-<form action="/userCreate" method="post">
-  <input type="text" name="username" placeholder="Enter Username" />
-  <input type="text" name="password" placeholder="Enter Password" id="" />
-  {{!-- <input type="text" name="catchPhrase" placeholder="Catch Phrase" id="" /> --}}
-  {{! <input type="number" name="rating" placeholder="rating" id=""> }}
-  <a href="/user/userCreate"></a><button type="submit">SUBMIT</button>
-</form>
+  <form action="/userCreate" method="post">
+    <input type="text" name="username" placeholder="Enter Username" />
+    <input type="text" name="password" placeholder="Enter Password" id="" />
+    {{!-- <input type="text" name="catchPhrase" placeholder="Catch Phrase" id="" /> --}}
+    {{! <input type="number" name="rating" placeholder="rating" id=""> }}
+    <a href="/user/userCreate"></a><button type="submit">SUBMIT</button>
+  </form>
 </div>
+  {{!-- <div class="regMap">
+    <div id="map" style="width: 40%; height: 300px;left: 80px;"></div>
+    <script src="javascripts/mapScript.js"></script>
+  </div>
+<div class="loginFields">
+    <form action="/save-home-base" method="POST">
+      <input type="text" name="theLatitude" id="latitude" />
+      <input type="text" name="theLongitude" id="longitude" />
+      <button type="submit">Save Home Base</button>
+    </form>
+</div> --}}
+<div>
     <ul class="goBack">
       <li><a href="http://localhost:3000/index"><button type="button" class="btn btn-outline-info">Go Back</button></a></li>
     </ul>
+</div>  

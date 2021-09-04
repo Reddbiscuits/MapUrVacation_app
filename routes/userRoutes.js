@@ -16,7 +16,7 @@ router.post("/userCreate", (req, res) => {
   const hash1 = bcrypt.hashSync(req.body.password, salt);
 
   User.create({ username: req.body.username, password: hash1 }).then(() => {
-    res.redirect("/index");
+    res.redirect("/indextwo");
   });
 });
 
@@ -41,12 +41,18 @@ router.get("/login", (req, res) => {
   res.render("user/login");
 });
 
+router.get("/userHomeBase", (req, res) => {
+  res.render("user/userHomeBase", { theUsername: req.session.currentUser.username });
+});
+
 router.get("/userprofile", (req, res) => {
   if (!req.session.currentUser) {
     res.send("user not found - go to login and log in");
   } else {
     //req.session.currentUser.username
-    res.render("userprofile", { theUsername: req.session.currentUser.username });
+    User.findById(req.session.currentUser._id).then((user) => {
+      res.render("userprofile", { theUsername: req.session.currentUser.username, myLongitude: user.longitude, myLatitude: user.latitude });
+    });
   }
 });
 
@@ -59,10 +65,19 @@ router.post("/login-the-user", (req, res) => {
     //req.body.password // from browser
     if (bcrypt.compareSync(req.body.password, user.password)) {
       req.session.currentUser = user;
-      res.redirect("/userprofile");
+      res.redirect("/userHomeBase");
     } else {
       res.send("password not correct");
     }
+  });
+});
+
+router.post("/save-home-base", (req, res) => {
+  User.findByIdAndUpdate(req.session.currentUser._id, {
+    longitude: req.body.theLongitude,
+    latitude: req.body.theLatitude,
+  }).then(() => {
+    res.redirect("/userprofile");
   });
 });
 
