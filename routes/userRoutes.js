@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User.model");
+const Location = require("../models/locations.model");
 
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
@@ -51,7 +52,10 @@ router.get("/userprofile", (req, res) => {
   } else {
     //req.session.currentUser.username
     User.findById(req.session.currentUser._id).then((user) => {
-      res.render("userprofile", { theUsername: req.session.currentUser.username, myLongitude: user.longitude, myLatitude: user.latitude });
+      Location.find({ user: req.session.currentUser._id }).then((locsOfCurrentUser) => {
+        console.log(locsOfCurrentUser);
+        res.render("userprofile", { theUsername: req.session.currentUser.username, myLongitude: user.longitude, myLatitude: user.latitude, myLocations: locsOfCurrentUser });
+      });
     });
   }
 });

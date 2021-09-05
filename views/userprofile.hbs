@@ -5,31 +5,29 @@
       <h1>Welcome {{theUsername}}</h1>
     </div>
   </div>
-  {{! <form class="loginFields" action="/save-home-base" method="POST">
-      <input type="text" name="theLatitude" id="latitude" />
-      <input type="text" name="theLongitude" id="longitude" />
-      <button type="submit">Save Home Base</button>
-    </form> }}
+    <form class="loginFields" action="/save-new-loc" method="POST">
+      <input type="text" name="newName" id="newname" />
+      <input type="text" name="newLongitude" id="newlongitude" />
+      <input type="text" name="newLatitude" id="newlatitude" />
+      <button type="submit">Save New Location</button>
+    </form>
   <div>
     <input type="text" name="theLongitude" id="longitude" value="{{myLongitude}}" style="
     display: none;" />
     <input type="text" name="theLatitude" id="latitude" value="{{myLatitude}}" style="
     display: none;" />
+    {{#each myLocations}}
+      <input type="text" id="loc-longitude-{{@index}}" value="{{this.longitude}}" style="display: none;" />
+      <input type="text" id="loc-latitude-{{@index}}" value="{{this.latitude}}" style="display: none;" />
+    {{/each}}
     <div id="map" style="width: 90%; height: 600px;left: 80px;"></div>
     <script src="javascripts/mapScript.js"></script>
   </div>
 </section>
-<br /><br /><br />
 <section class="locTable">
   <div class="welcomeText">
     <h2>Please enter a destination</h2>
   </div>
-  <form class="loginFields" action="/save-new-loc" method="POST">
-    <input type="text" name="newName" id="newname" />
-    <input type="text" name="newLongitude" id="newlongitude" />
-    <input type="text" name="newLatitude" id="newlatitude" />
-    <button type="submit">Save New Location</button>
-  </form>
   <div>
     <table class="destination-table" cellpadding="0" cellspacing="0">
       <thead>

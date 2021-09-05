@@ -9,11 +9,23 @@ const map = new mapboxgl.Map({
   center: [lon, lat], // starting position [lng, lat]
   zoom: 9, // starting zoom
 });
+
 const marker = new mapboxgl.Marker({
   draggable: true,
 })
   .setLngLat([lon, lat])
   .addTo(map);
+
+for (let index = 0; index < 200; index++) {
+  let llonEl = document.querySelector("#loc-longitude-" + index);
+  let llatEl = document.querySelector("#loc-latitude-" + index);
+  if (llonEl && llatEl) {
+    const llon = llonEl.value;
+    const llat = llatEl.value;
+    const marker = new mapboxgl.Marker().setLngLat([llon, llat]).addTo(map);
+  }
+}
+
 const nav = new mapboxgl.NavigationControl({ visualizePitch: true });
 map.addControl(nav, "top-left");
 
@@ -51,13 +63,14 @@ map.on("load", () => {
   // `result` event is triggered when a user makes a selection
   //  Add a marker at the result's coordinates
   geocoder.on("result", ({ result }) => {
+    console.log("result from mapbox", result);
     map.getSource("single-point").setData(result.geometry);
     //document.querySelector(".locationField").innerText = result.geometry;
     console.log("result.geometry", result.geometry);
+    document.querySelector("#newname").value = result.place_name;
     document.querySelector("#longitude").value = result.geometry.coordinates[0];
     document.querySelector("#latitude").value = result.geometry.coordinates[1];
     document.querySelector("#newlongitude").value = result.geometry.coordinates[0];
     document.querySelector("#newlatitude").value = result.geometry.coordinates[1];
-    
   });
 });

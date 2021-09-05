@@ -4,12 +4,11 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema({
   username: {
     type: String,
-    unique: true
+    unique: true,
   },
   password: String,
   longitude: Number,
-  latitude: Number
-  
+  latitude: Number,
 });
 
 const User = model("User", userSchema);

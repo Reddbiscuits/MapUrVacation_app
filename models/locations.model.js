@@ -1,5 +1,5 @@
 // Iteration #1
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const locationsSchema = new Schema(
@@ -8,11 +8,12 @@ const locationsSchema = new Schema(
     longitude: Number,
     latitude: Number,
     kilometers: Number,
-    miles: Number  
+    miles: Number,
+    user: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-module.exports = model('Locations', locationsSchema);
+module.exports = model("Locations", locationsSchema);
