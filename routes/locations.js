@@ -9,6 +9,15 @@ router.post("/save-new-loc", (req, res) => {
   });
 });
 
+router.get("/locations", (req, res, next) => {
+  // List the locations
+  Locations.find({ user: req.session.currentUser._id }).then((result) => {
+    console.log("results", result);
+    res.render("destination-table", { listOfLocations: result });
+    // res.send(result)
+  });
+});
+
 router.get("/show", (req, res) => {
   res.render("locations/show");
 });
