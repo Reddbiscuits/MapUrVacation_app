@@ -68,16 +68,25 @@ router.post("/login-the-user", (req, res) => {
     // if User.exists({latitude && longitude}) => {
     //   res.redirect("/userprofile");
     // }
+    // if (bcrypt.compareSync(req.body.password, user.password)) && (User.exists(user.latitude && user.longitude)) {
+    //   req.session.currentUser = user;
+    //   res.redirect("/userprofile");
+    // }
+
     //user.password // from db (hashed)
     //req.body.password // from browser
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      req.session.currentUser = user;
-      res.redirect("/userHomeBase");
-    }  else {
+      if (user.latitude && user.longitude) {
+        req.session.currentUser = user;
+        res.redirect("/userprofile");
+      } else {
+        req.session.currentUser = user;
+        res.redirect("/userHomeBase");
+      }
+    } else {
       res.send("password not correct");
     }
   });
-  
 });
 
 router.post("/save-home-base", (req, res) => {
