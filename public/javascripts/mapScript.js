@@ -225,8 +225,11 @@ map.on("load", () => {
   boundingBoxPoints.forEach(function (point) {
     bounds.extend(point);
   });
-
-  map.fitBounds(bounds, { padding: 50 });
+  if (boundingBoxPoints.length === 1) {
+    map.fitBounds(bounds, { padding: 500 });
+  } else {
+    map.fitBounds(bounds, { padding: 50 });
+  }
 
   // this whole block is for storing a newly selected location into the DOM form -> and into the database from there
   // Listen for the `result` event from the Geocoder

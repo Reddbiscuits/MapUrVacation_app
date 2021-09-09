@@ -27,7 +27,7 @@ app.use(
     cookie: { maxAge: 600000000 }, // 10 minutes
     store: MongoStore.create({
       // <== ADDED !!!
-      mongoUrl: "mongodb://localhost/MapUrVacation_app",
+      mongoUrl: process.env.MONGODB_URI,
       //mongooseConnection: mongoose.connection,
       // ttl => time to live
       // ttl: 60 * 60 * 24 // 60sec * 60min * 24h => 1 day
