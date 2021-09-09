@@ -1,0 +1,241 @@
+
+
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* .bodyBg {
+  background-image: url(/images/theatre.jpg);
+} */
+
+/* Navigation Box */
+
+.locTable {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+/* .container {
+  width: 100%;
+  align-items: center;
+} */
+
+.iconImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 1px #222);
+}
+
+#icon {
+  height: 80px;
+  width: 100px;
+}
+
+#name {
+  height: 80px;
+  width: 200px;
+  padding-top: 10px;
+}
+
+.form {
+  border: white;
+  display: flex;
+  flex-direction: row;
+  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(1px 1px 0px #222); */
+}
+
+.search-field {
+  width: 600px;
+  padding: 10px 15px 10px 35px;
+  border: 2px white;
+  border-radius: 100px;
+  outline: none;
+  background-color: lightgray;
+  /* -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(1px 1px 0px #222); */
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-right: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.search-click {
+  background-color: #fb3e44;
+  color: white;
+  padding: 5px;
+  border: none;
+  outline: none;
+  margin-left: -55px;
+}
+
+.house {
+  -webkit-filter: drop-shadow(5px 5px 0px #222);
+  filter: drop-shadow(1px 1px 0px #222);
+}
+
+.index {
+  height: 1000px;
+  width: 100%;
+}
+.indexImg {
+  background-color: cadetblue;
+  width: 100%;
+  height: 900px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(0px 3px 5px #222);
+  /* background-image: url(/images/mapWall.jpeg);
+  background-size: cover; */
+}
+
+form {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(1px 1px 0px #222);
+}
+
+button {
+  text-shadow: 1px 1px 0px black;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(1px 1px 0px #222);
+}
+
+.welcomeText {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  line-height: normal;
+}
+
+.navBar {
+  width: 100%;
+  background-color: rgb(3, 127, 131);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-between;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(0px 3px 5px #222);
+}
+
+h1 {
+  color: antiquewhite;
+  font-size: 80px;
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  color: antiquewhite;
+  font-size: 40px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.possibleMaps {
+  display: flex;
+  justify-content: space-around;
+}
+
+h3 {
+  color: antiquewhite;
+  font-size: 35px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.indexCard {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.sampleMap {
+  width: 350px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.loginFields {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.goBack li {
+  list-style-type: none;
+}
+
+.goBack a {
+  padding-top: 40px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  width: 120%;
+  display: flex;
+  flex-direction: row;
+}
+
+.marker {
+  background-image: url('/images/redMarkerHB.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#map {
+  object-position: center;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 5px #222);
+}
+
+.regMap {
+  display: flex;
+  justify-content: center;
+  padding-right: 155px;
+}
+
+/* Location Table */
+.destination-table {
+  margin: 0 auto 40px auto;
+  font-size: 1.5em;
+}
+
+.destination-table th,
+td {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  padding: 5px 10px;
+  text-align: center;
+}
