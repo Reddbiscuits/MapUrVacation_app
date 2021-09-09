@@ -98,16 +98,11 @@ router.post("/save-home-base", (req, res) => {
   });
 });
 
-// router.get('/locations/:theID', (req, res) => {
-
-//   req.params.theID // ==> 61052265119dbf8593258766
-
-//   Locations.findById(req.params.theID)
-//     .then((oneCeleb) => {
-//       // console.log('Retrieved film from DB:', oneFilm)
-//       res.render('locations/show.hbs', { oneCeleb: oneCeleb });
-//       // res.send(oneFilm)
-//     })
-// });
+router.post("/users/:theID/delete", (req, res, next) => {
+  // Iteration #5: Delete the Movie
+  User.findByIdAndDelete(req.session.currentUser._id).then(() => {
+    res.redirect("/index");
+  });
+});
 
 module.exports = router;
