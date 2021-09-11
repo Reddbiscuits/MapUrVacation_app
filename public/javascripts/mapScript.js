@@ -228,7 +228,7 @@ map.on("load", () => {
   if (boundingBoxPoints.length === 1) {
     map.fitBounds(bounds, { padding: 500 });
   } else {
-    map.fitBounds(bounds, { padding: 50 });
+    map.fitBounds(bounds, { padding: 100 });
   }
 
   // this whole block is for storing a newly selected location into the DOM form -> and into the database from there

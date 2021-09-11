@@ -99,7 +99,7 @@ router.post("/save-home-base", (req, res) => {
 });
 
 router.post("/users/:theID/delete", (req, res, next) => {
-  // Iteration #5: Delete the Movie
+  // Delete the User
   User.findByIdAndDelete(req.session.currentUser._id).then(() => {
     res.redirect("/index");
   });
